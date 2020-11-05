@@ -31,9 +31,8 @@ let twoSum = function(nums, target) {
     const pairs = [];
     
     for (let i = 0; i < nums.length - 1; i++) {
-        for (let j = 0; j < nums.length; j++) {
-            if (nums[i] + nums[j] === target) return [i,j];
+        for (let j = 1; j < nums.length; j++) {
+            if (nums[i] + nums[j] === target && i !== j) return [i,j];
         }
     }
-    
 };
