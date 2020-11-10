@@ -44,4 +44,4 @@ let maxSubArray = function(nums) {
         maxSum = Math.max(currentSum, maxSum);
     }
     return maxSum;
-};
+}; 
