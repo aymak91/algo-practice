@@ -20,7 +20,7 @@
 // Explanation: The 2 and -5 collide resulting in -5. The 10 and -5 collide resulting in 10.
 
 // Example 4:
-// Input: asteroids = [-2,-1,1,2] 
+// Input: asteroids = [-2,-1,1,2]
 // Output: [-2,-1,1,2]
 // Explanation: The -2 and -1 are moving left, while the 1 and 2 are moving right. Asteroids moving the same direction never meet, so no asteroids will meet each other.
  
