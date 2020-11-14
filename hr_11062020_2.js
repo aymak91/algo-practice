@@ -1,0 +1,1 @@
+function weightCapacity(weights, maxCap) 
