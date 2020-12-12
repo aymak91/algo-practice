@@ -1,6 +1,7 @@
 // Math.random() will generate a number from 0 to 1 randomly. Use this to create 
-// a function estimate_pi where Math.random is used to create uniformly distributed 
-// random points within a square sized 1x1 and estimate the number pi.
+// a function estimate_pi(n) where Math.random is used to create an n number of 
+// uniformly distributed random points within a square sized 1x1 and estimate the 
+// number pi.
 
 let estimate_pi = function(n) {
     let num_point_circle = 0;
