@@ -11,8 +11,12 @@ p {
     color: teal;
 }
 
+$width: 120px;
+
 .input-field {
     color: red;
+    background-color: black;
+    width: $width;
 }
 
 #email-address-input {
