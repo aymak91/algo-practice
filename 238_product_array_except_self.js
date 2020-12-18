@@ -25,8 +25,8 @@ let productExceptSelf = function(numbers) {
 		}
 		new_arr.push(product)
 	}
-	return new_arr;
-}
+	return new_arr; 
+} 
 
 //  O(n) with O(1) space
 let productExceptSelf = function(numbers) {
