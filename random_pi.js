@@ -19,4 +19,4 @@ let estimate_pi = function(n) {
     }
 
     return 4 * num_point_circle / num_point_total;
-}
+} 
