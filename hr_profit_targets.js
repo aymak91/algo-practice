@@ -24,7 +24,7 @@
 // Returns:
 //     int: the total number of pairs determined
 
-function stockPairs(stocksProfit, target) {
+function stockPairs(stocksProfit, target) { 
     // Write your code here 
     
     let pairs = [];
