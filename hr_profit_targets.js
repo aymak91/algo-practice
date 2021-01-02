@@ -30,7 +30,7 @@ function stockPairs(stocksProfit, target) {
     let pairs = [];
     
     for (let i = 0; i < stocksProfit.length; i++) {
-        for (let j = i + 1; j < stocksProfit.length; j++) {
+        for (let j = i + 1; j < stocksProfit.length; j++) { 
             let iStock = stocksProfit[i];
             let jStock = stocksProfit[j];
             let pair = `[${iStock}, ${jStock}]`;
