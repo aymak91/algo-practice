@@ -32,7 +32,7 @@ function numberOfCharactersEscaped(expression) {
     
     for (let i = 0; i < expression.length - 1; i++) {
         if (expression[i] === '#') {
-            hashStart = !hashStart;
+            hashStart = !hashStart; 
         } else if (expression[i] != '#' && expression[i] != '!' && expression[i - 1] === '!' && hashStart === true) {
             escaped++;
         }
