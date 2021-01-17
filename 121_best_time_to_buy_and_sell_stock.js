@@ -30,3 +30,18 @@ let maxProfit = function(prices) {
     }
     return maxProf;
 };
+
+let maxProfitFaster = function(prices) {
+    let minBuyPrice = Infinity;
+    let maxProf = 0;
+
+    for (let price of prices) {
+        if (price < minBuyPrice) {
+            minBuyPrice = price;
+        } else if (price - minBuyPrice > maxProf) {
+            maxProf = price -minBuyPrice;
+        }
+    }
+
+    return maxProf;
+}
