@@ -36,3 +36,23 @@ let twoSum = function(nums, target) {
         }
     }
 };
+
+let twoSumFaster = function(nums, target) {
+    
+    let numberIdx = new Map();
+    let results = [];
+    
+    for (let i=0; i < nums.length; i++) {
+        let num = nums[i];
+        let complement = target - num;
+        
+        if (numberIdx.has(complement)) {
+            results[0] = numberIdx.get(complement);
+            results[1] = i;
+            return results;
+        }
+        numberIdx.set(num, i);
+    }
+    
+    return results;
+};
