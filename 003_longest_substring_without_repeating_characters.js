@@ -36,7 +36,7 @@
  */
 
 //  this is slow AF
-let lengthOfLongestSubstring = function(s) { 
+let lengthOfLongestSubstring = function(s) {
    
     let maxSubLength = 0;
     
