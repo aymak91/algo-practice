@@ -80,3 +80,37 @@
 // 1 ≤ n ≤ 50
 // 1 ≤ lengths[i] ≤ 104
 // 1 ≤ salePrice, costPerCut ≤ 1000
+
+function  maxProfit(costPerCut, salePrice, lengths) {
+    let maxProfit = 0;
+    let max = Math.max(...lengths);
+
+    for (let i=1; i<max; i++) {
+        maxProfit = Math.max(maxProfit,helper(i, costPerCut, salePrice, lengths));
+    }
+    return maxProfit;
+}
+
+function helper(curLength, costPerCut, salePrice, lengths) {
+    let totalUniformRods = 0;
+    let totalCuts = 0;
+
+    for (let i=0; i<lengths.length; i++) {
+        let currRod = lengths[i];
+        if (currLength > currRod) continue;
+        let tempCut = 0;
+        let tempTotalUniformRods = 0;
+
+        if (currRod%currLength === 0) {
+            tempCut = Math.floor(currRod / currLength) - 1;
+        } else {
+            tempCut = Math.floor(currRod / currLength);
+        }
+        tempTotalUniformRods = Math.floor(currRod/currLength);
+        if (tempTotalUniformRods * currLength * salePrice - tempCut * costPerCut > 0) {
+            totalCuts += tempCut;
+            totalUniformRods += tempTotalUniformRods;
+        }
+        return totalUniformRods * currLength * salePrice - totalCuts * costPerCut;
+    }
+}

@@ -3,28 +3,18 @@
 
  
 // Example
-
 // picture= ["aabba", "aabba", "aaacb"]
-
- 
 
 // Each string represents a row of the picture and each letter represents a cell's color. The diagram below shows the 5 fills needed to repaint the picture. It takes two fills each for a and b, and one for c. The array picture is shown below.
 
 // Function Description
-
 // Complete the function strokesRequired in the editor below.
 
- 
-
 // strokesRequired has the following parameter(s):
-
 //     string picture[h]:  an array of strings where each string represents one row of the picture to be painted
 
 // Output:
-
 //     int: the minimum number of fills required to repaint the picture
-
- 
 
 // Constraints
 
@@ -34,3 +24,52 @@
 // 1 ≤ h*w ≤ 105
 // length(picture[i]) = w (where 0 ≤ i < h)
 // picture[i][j] is in the set  {'a', 'b', 'c'} (where 0 ≤ i < h and 0 ≤ j < w)
+
+function strokesRequired(picture) {
+    let matrix = picture.map(ele => ele.split(''));
+    let visited = matrix.map(row => row.map(value => false));
+
+    let count = 0;
+    for (let row=0; row < matrix.length; row++) {
+        for (let col=0; col < matrix[0].length; col++) {
+            if (!visited[row][col]) {
+                let letter = matrix[row][col];
+                color(row, col, letter, visited, matrix);
+                count++;
+            }
+            // visited[row][col] = true;
+        }
+    }
+    return count;
+}
+
+function color(row, col, letter, visited, matrix) {
+    let squares = [[row, col]];
+
+    while (squares.length) {
+        let node = squares.shift();
+        let x = node[0];
+        let y = node[1];
+        visited[x][y] = true;
+        let neighbors = getNeighbors(x, y, letter, visited, matrix);
+        squares = squares.concat(neighbors);
+    }
+}
+
+function getNeighbors(row, col, letter, visited, matrix) {
+    let dirs = [[1,0], [0,1], [-1,0], [0,-1]];
+    let neighbors = [];
+
+    for (let i=0; i<dirs.length; i++) {
+        let newX = row + dirs[i][0];
+        let newY = col + dirs[i][0];
+        if (newX >= 0 && newX < matrix.length && newY >= 0 && newY < matrix[0].length) {
+            if (!visited[newX][newY]) {
+                if (!visited[newX][newY] === letter) {
+                    neighbors.push([newX, newY])
+                    visited[newX][newY] = true;
+                }
+            }
+        }
+    }
+}
