@@ -28,19 +28,14 @@
  */
 var uncommonFromSentences = function(A, B) {
     
-    let aWords = A.split(' ');
-    let bWords = B.split(' ');
-    let allWords = aWords.concat(bWords);
+    let allWords = A.concat(' ', B).split(' ');
     let wordCount = new Map();
     
-    console.log(allWords);
     for (let i=0; i < allWords.length; i++) {
         if (!wordCount[allWords[i]]) {
             wordCount[allWords[i]] = 1;
-            console.log(wordCount)
         } else {
             wordCount[allWords[i]]++;
-            console.log(wordCount)
         }
     }
     
