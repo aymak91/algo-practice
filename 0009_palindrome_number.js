@@ -35,3 +35,22 @@ var isPalindrome = function(x) {
     let xStringRev = xString.split('').reverse().join('');
     return xString === xStringRev;
 };
+
+var isPalindromeMath = function(x) {
+      
+    if (x < 0) return false;
+    
+
+    
+    return x === reverse(x);
+};
+
+let reverse = function(x) {
+    let reversed = 0;
+    
+    while (x > 0) {
+        reversed = (reversed * 10) + (x % 10);
+        x = Math.floor(x/10);
+    }
+    return reversed;
+};
