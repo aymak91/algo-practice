@@ -30,15 +30,15 @@ let merge = function(intervals) {
     let outputArr = [intervals[0]];
     
     for (let i=1; i<intervals.length; i++) {
-        if (intervals[i][0] <= outputArr[outputArr.length-1][1] && intervals[i][1] > outputArr[outputArr.length-1][1]) {
-            outputArr[outputArr.length-1] = [outputArr[outputArr.length-1][0], intervals[i][1]];
-        } else if (intervals[i][0] <= outputArr[outputArr.length-1][1] && intervals[i][1] <= outputArr[outputArr.length-1][1]) {
+        let last = outputArr.length-1;
+        if (intervals[i][0] <= outputArr[last][1] && intervals[i][1] > outputArr[last][1]) {
+            outputArr[last] = [outputArr[last][0], intervals[i][1]];
+        } else if (intervals[i][0] <= outputArr[last][1] && intervals[i][1] <= outputArr[last][1]) {
             continue;
         } else {
             outputArr.push(intervals[i]);
         }
-        intervals.shift();
-        i--;
+       
     }
     return outputArr;
 };
