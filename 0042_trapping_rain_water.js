@@ -27,8 +27,8 @@ let trap = function(height) {
     
     let totalWater = 0;
     let length = height.length;
-    let leftMax = [];
-    let rightMax = [];
+    let leftMax = new Array(length);
+    let rightMax = new Array(length);
     
     leftMax[0] = height[0];
     rightMax[length-1] = height[length-1];
