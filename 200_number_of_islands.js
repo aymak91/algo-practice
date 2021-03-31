@@ -69,3 +69,5 @@ let dfsFillCount = function(board, i, j) {
     
     return 1;
 }
+
+// was talking about time complexity

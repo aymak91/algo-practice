@@ -49,8 +49,6 @@ var addTwoNumbers = function(l1, l2) {
     let p2 = l2;
     let current = dummyHead;
     let carry = 0;
-    console.log(p1)
-    console.log(p2)
     
     while(p1 !== null || p2 !== null) {
         let x = (p1 !== null) ? p1.val : 0;
@@ -63,8 +61,6 @@ var addTwoNumbers = function(l1, l2) {
         
         if (p1 !== null) p1 = p1.next;
         if (p2 !== null) p2 = p2.next;
-        console.log(p1);
-        console.log(p2);
     }
     
     if (carry > 0) current.next = new ListNode(carry);
