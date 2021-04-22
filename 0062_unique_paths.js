@@ -40,12 +40,16 @@
 let uniquePaths = function(m, n) {
     let dp = [...Array(m)].map(e => Array(n).fill(null));
     
+    // fill first col
     for (let i=0; i<dp.length; i++) {
         dp[i][0] = 1;
     }
+
+    // fill first row
     for (let i=0; i<dp[0].length; i++) {
         dp[0][i] = 1;
     }
+    
     for (let i=1; i<dp.length; i++) {
         for (let j=1; j<dp[0].length; j++) {
             dp[i][j] = dp[i-1][j] + dp[i][j-1];

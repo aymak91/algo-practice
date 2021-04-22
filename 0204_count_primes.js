@@ -27,3 +27,25 @@ let countPrimes = function(n) {
     
     return primeCount;
 };
+
+// const countPrimes = function(n) {
+    
+//     let primes = 0;
+    
+//     for (let i=2; i<n; i++) {
+//         if (isPrime(i)) primes++;
+//     }
+    
+//     return primes;
+// }
+
+// const isPrime = function(n) {
+    
+
+//     for (let i=2; i<n; i++) {
+//         console.log(n, i, n % i)
+//         if (n % i === 0) return false;
+//     }
+
+//     return true;
+// }

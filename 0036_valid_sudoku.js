@@ -59,11 +59,11 @@ var isValidSudoku = function(board) {
                 seen.has(currentVal.toString() + " found in column " + j.toString()) ||
                 seen.has(currentVal.toString() + " found in box " + Math.floor(i/3).toString() + "-" + Math.floor(j/3).toString())) {
                     return false
-                } else {
-                    seen.add(currentVal.toString() + " found in row " + i.toString());
-                    seen.add(currentVal.toString() + " found in column " + j.toString());
-                    seen.add(currentVal.toString() + " found in box " + Math.floor(i/3).toString() + "-" + Math.floor(j/3).toString());
-                }
+                } 
+
+                seen.add(currentVal.toString() + " found in row " + i.toString());
+                seen.add(currentVal.toString() + " found in column " + j.toString());
+                seen.add(currentVal.toString() + " found in box " + Math.floor(i/3).toString() + "-" + Math.floor(j/3).toString());
             }
         }
     }

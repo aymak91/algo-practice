@@ -16,25 +16,19 @@
  * @param {string} s
  * @return {number}
  */
-let firstUniqChar = function(s) {
-    
-    let frequencies = {};
-    let res = -1;
-    
-    for (let char of s) {
-        if (frequencies[char] === undefined) {
-            frequencies[char] = 1;
-        } else {
-            frequencies[char]++;
-        }
-    }
-    
-    for (let i = 0; i < s.length; i++) {
-        let char = s.charAt(i);
-        
-        if (frequencies[char] === 1) return i;
-    }
-    
-    return res;
-    
+let firstUniqChar = function (s) {
+  let frequencies = {};
+  let res = -1;
+
+  for (let char of s) {
+    if (!frequencies[char]) frequencies[char] = 0;
+    frequencies[char]++;
+  }
+
+  for (let i = 0; i < s.length; i++) {
+    let char = s[i];
+    if (frequencies[char] === 1) return i;
+  }
+
+  return res;
 };

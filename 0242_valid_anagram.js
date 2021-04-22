@@ -21,31 +21,23 @@
  * @param {string} t
  * @return {boolean}
  */
-let isAnagram = function(s, t) {
-    
-    if (s.length !== t.length) return false;
-    
-    let sCount = {};
-    let tCount = {}
-    
-    for (let i = 0; i < s.length; i++) {
-        if (sCount[s[i]] === undefined) {
-            sCount[s[i]] = 1;
-        } else {
-            sCount[s[i]]++    
-        }
-        
-        if (tCount[t[i]] === undefined) {
-            tCount[t[i]] = 1;
-        } else {
-            tCount[t[i]]++    
-        }
-    }
-    
-    for (let i = 0; i < s.length; i++) {
-        if (sCount[s[i]] !== tCount[s[i]]) return false;
-    }
-    
-    return true;
-    
+let isAnagram = function (s, t) {
+  if (s.length !== t.length) return false;
+
+  let sCount = {};
+  let tCount = {};
+
+  for (let i = 0; i < s.length; i++) {
+    if (!sCount[s[i]]) sCount[s[i]] = 0;
+    sCount[s[i]]++;
+
+    if (!tCount[t[i]]) tCount[t[i]] = 0;
+    tCount[t[i]]++;
+  }
+
+  for (let i = 0; i < s.length; i++) {
+    if (sCount[s[i]] !== tCount[s[i]]) return false;
+  }
+
+  return true;
 };

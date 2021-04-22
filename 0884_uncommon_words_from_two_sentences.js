@@ -26,21 +26,16 @@
  * @param {string} B
  * @return {string[]}
  */
-var uncommonFromSentences = function(A, B) {
-    
-    let allWords = A.concat(' ', B).split(' ');
-    let wordCount = new Map();
-    
-    for (let i=0; i < allWords.length; i++) {
-        if (!wordCount[allWords[i]]) {
-            wordCount[allWords[i]] = 1;
-        } else {
-            wordCount[allWords[i]]++;
-        }
-    }
-    
-    let uncommonWords = allWords.filter(word => wordCount[word] === 1);
-    
-    return uncommonWords;
-    
+var uncommonFromSentences = function (A, B) {
+  const allWords = A.concat(" ", B).split(" ");
+  let wordCount = new Map();
+
+  for (let i = 0; i < allWords.length; i++) {
+    if (!wordCount[allWords[i]]) wordCount[allWords[i]] = 0;
+    wordCount[allWords[i]]++;
+  }
+
+  const uncommonWords = allWords.filter((word) => wordCount[word] === 1);
+
+  return uncommonWords;
 };

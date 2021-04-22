@@ -20,10 +20,8 @@
 let topKFrequent = function(nums, k) {
     let hash = {};
     nums.forEach((num) => {
-        if (!hash[num]) {
-            hash[num] = 0
-        }
-        hash[num] += 1;
+        if (!hash[num]) hash[num] = 0;
+        hash[num]++;
     })
     return Object.entries(hash).sort((a, b) => b[1] - a[1]).slice(0, k).map((pair) => pair[0])
 };
