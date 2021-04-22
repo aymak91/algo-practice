@@ -62,3 +62,22 @@ function getUniqueCharacter(s) {
     if (uniques.length === 0) return -1;
     return s.split('').indexOf(uniques[0])+1;
 }
+
+function getUniqueCharacter2(s) {
+  // Write your code here
+
+  let charCount = {};
+
+  for (let i = 0; i < s.length; i++) {
+    const char = s[i];
+    if (!charCount[char]) charCount[char] = 0;
+    charCount[char]++;
+  }
+
+  for (let i = 0; i < s.length; i++) {
+    const char = s[i];
+    if (charCount[char] === 1) return i + 1;
+  }
+
+  return -1;
+}

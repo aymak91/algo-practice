@@ -36,16 +36,26 @@
 // 1 ≤ songs[i] ≤ 1000, where 0 ≤ i < n
 
 function playlist(songs) {
-    // Write your code here
-    let pairs = [];
-    
-    for (let i=0; i<songs.length-1; i++) {
-        for (let j=i+1; j<songs.length; j++) {
-            if ((!pairs.includes([i,j]) || !pairs.includes[j,i]) && (songs[i]+songs[j])%60===0) {
-                pairs.push([i,j]);
-            }
-        }
-    }
-    return pairs.length;
+  // Write your code here
 
+  let pairs = 0;
+
+  let counter = {};
+  songs = songs.map((time) => time % 60);
+
+  for (let i = 0; i < songs.length; i++) {
+    const song = songs[i];
+    const diff = (60 - song) % 60;
+    if (counter[diff]) pairs += counter[diff];
+    if (!counter[song]) counter[song] = 0;
+    counter[song]++;
+  }
+
+  // for (let i=0; i<songs.length-1; i++) {
+  //     for (let j=i+1; j<songs.length; j++) {
+  //         if ((songs[i] + songs[j]) % 60 === 0) pairs++;
+  //     }
+  // }
+
+  return pairs;
 }
